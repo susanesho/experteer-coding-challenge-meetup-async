@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Trigger Search" do
   scenario "when a user triggers search " do
     visit "/"
-    fill_in "meet_up", with: "rails meetup"
+    fill_in "query", with: "rails meetup"
     click_button "Submit"
 
     expect(page).to have_content("Request is being processed and results will be available shortly")
