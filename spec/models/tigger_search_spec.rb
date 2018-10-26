@@ -5,7 +5,9 @@ describe TriggerSearch do
 
   describe "#save" do
     it "saves the data to redis" do
-      meetup = TriggerSearch.new(query: "science", data: { "meetup": ["yes": "working"] }, storage: storage )
+      meetup = TriggerSearch.new(query: "science",
+                                 data: { "meetup": ["yes": "working"]
+                                 }, storage: storage )
 
       meetup.save
       redis_value = storage.get("meetup:science")

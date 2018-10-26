@@ -1,14 +1,15 @@
 class TriggerSearch
-  attr_accessor :data, :query
+  attr_accessor :data, :query, :exp
 
-  def initialize(data: {}, query: nil, storage: $redis)
+  def initialize(data: {}, query: nil, storage: $redis, exp: 5.minutes)
     @query = query
     @data = data
     @storage = storage
+    @exp = exp
   end
 
   def save
-    storage.set(storage_key, data.to_json, ex: 5.minutes)
+    storage.set(storage_key, data.to_json, ex: exp)
   end
 
   def find(query)
