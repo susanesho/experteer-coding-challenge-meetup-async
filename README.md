@@ -1,24 +1,45 @@
-# README
+# Meetups In Munich
+[![Build Status](https://semaphoreci.com/api/v1/susanesho/experteer-coding-challenge-meetup-async-3/branches/master/badge.svg)](https://semaphoreci.com/susanesho/experteer-coding-challenge-meetup-async-3)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About Meetups In Munich
 
-Things you may want to cover:
+This is Ruby-on-rails application that will let users to search for meetups in Munich.
 
-* Ruby version
+it makes use of [Meetup's API](https://secure.meetup.com/meetup_api/console/?path=/find/groups) to search for meetups in Munich and show past events' information for those meetups. 
 
-* System dependencies
+## Pre Installation
 
-* Configuration
+Things you may need before making use of the app locally:
 
-* Database creation
+.......................................................................
 
-* Database initialization
+* Login or create an account on [meetup](https://meetup.com)
 
-* How to run the test suite
+* generate or copy [api key](https://secure.meetup.com/meetup_api/key/)
 
-* Services (job queues, cache servers, search engines, etc.)
+*  store the api_key in an environment variable
 
-* Deployment instructions
+.......................................................................
 
-* ...
+## Installation
+Follow the steps below if you have redis set up on your computer
+
+.................................................................................
+
+*  Clone the repository
+*  store your api_key in an environment variable
+*  run `bundle`
+*  run `rails s` 
+
+.................................................................................
+
+NOTE: If you do not have redis set up, you can use homebrew to install redis
+
+.................................................................................
+* brew install redis
+* brew services start redis
+* rails s 
+
+.................................................................................
+
+You can now easily make as many request as you wish from the homepage :)
