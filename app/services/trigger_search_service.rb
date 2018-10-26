@@ -8,6 +8,7 @@ class TriggerSearchService
   LOCATION = "munich".freeze
   PUBLIC = "public".freeze
   PAGE = 10.freeze
+  GROUP_URL = "/find/groups".freeze
 
   def initialize(query:)
     @response = []
@@ -18,7 +19,7 @@ class TriggerSearchService
   end
 
   def call
-    @result = self.class.get("/find/groups", @options).parsed_response
+    @result = self.class.get(GROUP_URL, @options).parsed_response
     nil
   end
 end

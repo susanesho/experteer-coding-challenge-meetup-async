@@ -1,4 +1,6 @@
 class TriggerSearch
+  attr_accessor :data, :query
+
   def initialize(data: {}, query: nil, storage: $redis)
     @query = query
     @data = data
@@ -6,7 +8,7 @@ class TriggerSearch
   end
 
   def save
-    storage.set(storage_key, data.to_json)
+    storage.set(storage_key, data.to_json, ex: 5.minutes)
   end
 
   def find(query)
@@ -16,12 +18,11 @@ class TriggerSearch
 
   private
 
-  attr_reader :storage, :data
-  attr_accessor :query
+  attr_reader :storage
 
   def storage_key
     # remove all traces of whitespace
-    query = @query.gsub(/\s+/, "")
+    # query = @query.gsub(/\s+/, "")
     ["meetup", query].join(":")
   end
 end

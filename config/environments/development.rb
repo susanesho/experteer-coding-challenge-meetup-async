@@ -14,6 +14,12 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
+  config.cache_store = :redis_store, {
+      expires_in: 1.hour,
+      namespace: 'cache',
+      redis: { host: 'localhost', port: 6379, db: 0 },
+  }
+
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
 
