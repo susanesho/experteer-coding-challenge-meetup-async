@@ -1,0 +1,23 @@
+// Place all the styles related to the meetups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.meetup-card {
+  display: flex;
+  margin-top: 15px;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .thumb {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .details {
+    padding: 20px;
+  }
+}
