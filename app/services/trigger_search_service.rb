@@ -7,11 +7,13 @@ class TriggerSearchService
 
   LOCATION = "munich".freeze
   PUBLIC = "public".freeze
+  PAGE = 10.freeze
 
   def initialize(query:)
     @response = []
     @options = { query: {
       location: LOCATION,
+      page: PAGE,
       text: query, photo_host: PUBLIC, key: ENV["API_KEY"] } }
   end
 
