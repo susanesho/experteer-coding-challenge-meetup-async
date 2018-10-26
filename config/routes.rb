@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "meetups/show"
+  root to: "meetups#show"
+
+  post "/search", to: "meetups#search"
+  get "/polling", to: "meetups#polling"
 end
