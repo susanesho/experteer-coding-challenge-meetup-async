@@ -3,12 +3,12 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.3.1"
+ruby "2.4.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 5.2.1"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3"
+# gem "sqlite3"
 # Use Puma as the app server
 gem "puma", "~> 3.11"
 # Use SCSS for stylesheets
@@ -25,7 +25,9 @@ gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 # Use Redis adapter to run Action Cable in production
+gem "sidekiq"
 gem "httparty"
+gem "foreman", "~> 0.62"
 gem "i18n-js"
 gem "jquery-rails"
 gem "redis", "~> 4.0"
@@ -54,6 +56,7 @@ group :test do
   gem "chromedriver-helper"
   gem "rspec-rails", "~> 3.8"
   gem "selenium-webdriver"
+  gem "fakeredis", :require => "fakeredis/rspec"
 end
 
 group :development do
