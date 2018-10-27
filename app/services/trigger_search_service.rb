@@ -1,4 +1,6 @@
 class TriggerSearchService
+  # This service is used for making a request to meetups api
+  # it takes in a query and other optional argument
   include HTTParty
 
   base_uri 'api.meetup.com'

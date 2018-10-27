@@ -9,7 +9,7 @@ feature "Search Triggers", js: true do
     fill_in "query", with: "rails meetup"
     click_on "Submit"
 
-    expect(page).to have_content("Request is being processed and results will be available shortly")
+    expect(page).to have_content(I18n.t("meetups.search.success.message"))
     sleep 5
 
     within '#result' do
@@ -26,9 +26,9 @@ feature "Search Triggers", js: true do
     fill_in "query", with: "xxx"
     click_on "Submit"
 
-    expect(page).to have_content("Request is being processed and results will be available shortly")
+    expect(page).to have_content(I18n.t("meetups.search.success.message"))
     sleep 5
 
-    expect(page).to have_content('No result found.')
+    expect(page).to have_content(I18n.t("meetups.polling.results.empty"))
   end
 end

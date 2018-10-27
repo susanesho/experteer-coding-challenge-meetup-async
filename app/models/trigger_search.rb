@@ -1,4 +1,5 @@
 class TriggerSearch
+  # A Redis wrapper also used for storing, retrieving and expiring redis storage_key
   attr_accessor :data, :query, :exp
 
   def initialize(data: {}, query: nil, storage: $redis, exp: 5.minutes)

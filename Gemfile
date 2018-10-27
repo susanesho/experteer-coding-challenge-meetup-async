@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 gem "httparty"
 gem "jquery-rails"
+gem "i18n-js"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -50,7 +51,6 @@ group :test do
   gem "capybara", "~> 2.15.4"
   gem "selenium-webdriver"
   gem "chromedriver-helper"
-  gem "fakeredis", require: "fakeredis/rspec"
 end
 
 group :development do

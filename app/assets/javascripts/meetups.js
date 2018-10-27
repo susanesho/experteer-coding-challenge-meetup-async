@@ -34,7 +34,7 @@ const pollRequest = () => {
 						);
 					});
 				} else {
-					$('#result').html('No result found.');
+					$('#result').html(I18n.t("meetups.polling.results.empty"));
 				}
 				clearTimeout(pollingTimeout);
 			} else {
@@ -42,7 +42,7 @@ const pollRequest = () => {
 			}
 		},
 		error(res) {
-			$('#result').html('Something went wrong. Try again.');
+			$('#result').html(I18n.t("meetups.search.error.message"));
 			clearTimeout(pollingTimeout);
 		}
 	});
@@ -51,6 +51,6 @@ const pollRequest = () => {
 }
 
 function pooling() {
-	$('#result').html('<p>Loading...</p>');
+	$('#result').html('<p> Loading...</p>');
 	pollingTimeout = setTimeout(pollRequest, 1000);
 };

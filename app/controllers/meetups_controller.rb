@@ -3,7 +3,7 @@ class MeetupsController < ApplicationController
 
   def search
     TriggerSearchJob.perform_later(query: params[:query])
-    flash[:notice] = "Request is being processed and results will be available shortly"
+    flash[:notice] = I18n.t("meetups.search.success.message")
     respond_to do |format|
       format.js
       format.html { redirect_to root_path }
