@@ -12,9 +12,9 @@ feature "Search Triggers", js: true do
     expect(page).to have_content(I18n.t("meetups.search.success.message"))
     sleep 5
 
-    within '#result' do
-      expect(page).to have_css('.meetup-card')
-      expect(page).to have_css('.details')
+    within "#result" do
+      expect(page).to have_css(".meetup-card")
+      expect(page).to have_css(".details")
     end
   end
 
