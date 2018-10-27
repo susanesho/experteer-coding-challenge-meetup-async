@@ -27,6 +27,7 @@ gem "jbuilder", "~> 2.5"
 # Use Redis adapter to run Action Cable in production
 gem "sidekiq"
 gem "httparty"
+gem "foreman", "~> 0.62"
 gem "i18n-js"
 gem "jquery-rails"
 gem "redis", "~> 4.0"
