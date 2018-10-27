@@ -1,7 +1,4 @@
 # Meetups In Munich
-[![Build Status](https://semaphoreci.com/api/v1/susanesho/experteer-coding-challenge-meetup-async-3/branches/master/badge.svg)](https://semaphoreci.com/susanesho/experteer-coding-challenge-meetup-async-3)
-
-## About Meetups In Munich
 
 This is Ruby-on-rails application that will let users to search for meetups in Munich.
 

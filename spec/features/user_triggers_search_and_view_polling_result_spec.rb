@@ -7,11 +7,10 @@ feature "Search Triggers", js: true do
     expect(page).to have_content("Meetups In Munich")
 
     fill_in "query", with: "rails meetup"
-    click_button "Submit"
-
-    wait_for_ajax
+    click_on "Submit"
 
     expect(page).to have_content("Request is being processed and results will be available shortly")
+    sleep 30
 
     within '#result' do
       expect(page).to have_css('.meetup-card')
@@ -25,9 +24,7 @@ feature "Search Triggers", js: true do
     expect(page).to have_content("Meetups In Munich")
 
     fill_in "query", with: "xxx"
-    click_button "Submit"
-
-    wait_for_ajax
+    click_on "Submit"
 
     expect(page).to have_content("Request is being processed and results will be available shortly")
     expect(page).to have_content('No result found.')
