@@ -48,9 +48,9 @@ const pollRequest = () => {
 	});
 
 	$(".notice" ).fadeOut(2000);
-}
+};
 
 function pooling() {
 	$('#result').html('<p> Loading...</p>');
 	pollingTimeout = setTimeout(pollRequest, 1000);
-};
+}

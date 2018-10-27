@@ -54,6 +54,7 @@ group :test do
   gem "chromedriver-helper"
   gem "rspec-rails", "~> 3.8"
   gem "selenium-webdriver"
+  gem "fakeredis", :require => "fakeredis/rspec"
 end
 
 group :development do
