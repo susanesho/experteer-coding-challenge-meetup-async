@@ -10,7 +10,7 @@ feature "Search Triggers", js: true do
     click_on "Submit"
 
     expect(page).to have_content("Request is being processed and results will be available shortly")
-    sleep 30
+    sleep 5
 
     within '#result' do
       expect(page).to have_css('.meetup-card')
@@ -27,6 +27,8 @@ feature "Search Triggers", js: true do
     click_on "Submit"
 
     expect(page).to have_content("Request is being processed and results will be available shortly")
+    sleep 5
+
     expect(page).to have_content('No result found.')
   end
 end

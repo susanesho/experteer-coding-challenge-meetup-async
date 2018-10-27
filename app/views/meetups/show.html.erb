@@ -1,7 +1,11 @@
-<h1>Meetups In Munich</h1>
+<h2>Meetups In Munich</h2>
 
 <%= form_with url: search_path, remote: :true do |form| %>
-    <%= form.text_field :query %>
+    <%= form.text_field :query,
+                        pattern: "^[^\\/]*$",
+                        required: true,
+                        placeholder: "Type your search text here"
+    %>
     <%= form.submit "Submit" %>
 <% end %>
 

@@ -46,6 +46,8 @@ const pollRequest = () => {
 			clearTimeout(pollingTimeout);
 		}
 	});
+
+	$(".notice" ).fadeOut(2000);
 }
 
 function pooling() {

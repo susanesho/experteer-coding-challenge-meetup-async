@@ -23,7 +23,7 @@ class TriggerSearch
 
   def storage_key
     # remove all traces of whitespace
-    # query = @query.gsub(/\s+/, "")
+    query = @query.gsub(/\s+/, "")
     ["meetup", query].join(":")
   end
 end

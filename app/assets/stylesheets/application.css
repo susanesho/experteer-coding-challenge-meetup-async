@@ -26,3 +26,18 @@ body {
 .notice {
 	color: green;
 }
+input[type="submit"] {
+    background: #F64060;
+    padding: 4px;
+    color: white;
+    font-weight: 900;
+    border-color: #F64060;
+    font-size: 12px;
+}
+input#query {
+    width: 300px;
+    height: 20px;
+}
+form {
+    height: 40px;
+}
