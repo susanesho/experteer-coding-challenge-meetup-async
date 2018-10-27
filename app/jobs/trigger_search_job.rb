@@ -3,6 +3,7 @@ class TriggerSearchJob < ApplicationJob
 
   def perform(query:)
     return if trigger_search.find(query).present?
+
     service = TriggerSearchService.new(query: query)
     service.call
     data = service.result

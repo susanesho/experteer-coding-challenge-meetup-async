@@ -1,17 +1,35 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe TriggerSearchJob, type: :job do
+describe TriggerSearchJob do
   describe "#perform_" do
-    it "calls the TriggerSearchService" do
-      query = "rails meet up"
-      meet_up_api = TriggerSearchService.new(query: query)
+    let(:query) { "rails meet up" }
+    let(:trigger_search) { TriggerSearch.new }
+    let(:trigger_search_service) { TriggerSearchService.new(query: query) }
 
-      allow(meet_up_api).to receive(:call)
-      allow(TriggerSearchService).to receive(:new).and_return(meet_up_api)
+    context "when the key does not exist" do
+      it "calls the TriggerSearchService" do
+        allow(TriggerSearch).to receive(:new).and_return(trigger_search)
+        allow(trigger_search).to receive(:find).and_return(nil)
+        allow(trigger_search_service).to receive(:call)
+        allow(TriggerSearchService).to receive(:new).and_return(trigger_search_service)
 
-      TriggerSearchJob.perform_now(query: query)
+        TriggerSearchJob.perform_now(query: query)
 
-      expect(meet_up_api).to have_received(:call)
+        expect(trigger_search_service).to have_received(:call)
+      end
+    end
+
+    context "when the key exist" do
+      it "does not call the TriggerSearchService" do
+        allow(TriggerSearch).to receive(:new).and_return(trigger_search)
+        allow(trigger_search).to receive(:find).and_return(query)
+        allow(trigger_search_service).to receive(:call)
+        allow(TriggerSearchService).to receive(:new).and_return(trigger_search_service)
+
+        TriggerSearchJob.perform_now(query: query)
+
+        expect(trigger_search_service).not_to have_received(:call)
+      end
     end
   end
 end

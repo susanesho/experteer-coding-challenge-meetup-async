@@ -14,4 +14,5 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require i18n/translations
 //= require_tree .

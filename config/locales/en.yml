@@ -30,4 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  meetups:
+    search:
+      success:
+        message: Request is being processed and results will be available shortly
+      error:
+        message: Something went wrong. Try again.
+
+    polling:
+      results:
+        empty: No result found.
+        error:
+          message: Something went wrong. Try again
+
+
