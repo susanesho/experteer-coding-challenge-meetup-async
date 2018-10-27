@@ -7,7 +7,7 @@ feature "Search Triggers", js: true do
     expect(page).to have_content("Meetups In Munich")
 
     fill_in "query", with: "rails meetup"
-    click_on "Submit"
+    click_on "Search"
 
     expect(page).to have_content(I18n.t("meetups.search.success.message"))
     sleep 5
@@ -24,7 +24,7 @@ feature "Search Triggers", js: true do
     expect(page).to have_content("Meetups In Munich")
 
     fill_in "query", with: "xxx"
-    click_on "Submit"
+    click_on "Search"
 
     expect(page).to have_content(I18n.t("meetups.search.success.message"))
     sleep 5
