@@ -1,6 +1,6 @@
 # Meetups In Munich
 
-This is Ruby-on-rails application that will let users to search for meetups in Munich.
+This is a Ruby-on-rails application that will let users to search for meetups in Munich.
 
 it makes use of [Meetup's API](https://secure.meetup.com/meetup_api/console/?path=/find/groups) to search for meetups in Munich and show past events' information for those meetups. 
 
@@ -26,7 +26,7 @@ Follow the steps below if you have redis set up on your computer
 *  Clone the repository
 *  store your api_key in an environment variable
 *  run `bundle`
-*  run `rails s` 
+*  run `foreman start` 
 
 .................................................................................
 
